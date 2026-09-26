@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 240 240" width="64" height="64" role="img">
+  <title>Chi Beta Omega</title>
+  <g>
+    <path d="M10 10H190V118C190 178 150 214 100 232C50 214 10 178 10 118Z" fill="#ceb888"/>
+    <path d="M20 20H180V118C180 172 144 203 100 220C56 203 20 172 20 118Z" fill="#782f40"/>
+    <path d="M20 20H180V66H20Z" fill="#3a1420"/>
+    <path d="M20 66H180" stroke="#ceb888" stroke-width="3"/>
+    <g fill="#ceb888"><polygon points="62.00,32.00 64.72,39.26 72.46,39.60 66.39,44.43 68.47,51.90 62.00,47.62 55.53,51.90 57.61,44.43 51.54,39.60 59.28,39.26"/><polygon points="100.00,30.00 103.21,38.58 112.36,38.98 105.19,44.69 107.64,53.52 100.00,48.46 92.36,53.52 94.81,44.69 87.64,38.98 96.79,38.58"/><polygon points="138.00,32.00 140.72,39.26 148.46,39.60 142.39,44.43 144.47,51.90 138.00,47.62 131.53,51.90 133.61,44.43 127.54,39.60 135.28,39.26"/></g>
+    <path d="M30 76H170V118C170 166 138 193 100 208C62 193 30 166 30 118Z" fill="none" stroke="#ceb888" stroke-width="1.5" opacity=".7"/>
+    <text x="100" y="158" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="700" fill="#ceb888" textLength="124" lengthAdjust="spacingAndGlyphs">&#935;&#914;&#937;</text>
+    <path d="M64 170H136" stroke="#ceb888" stroke-width="2"/>
+    <text x="100" y="188" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="700" fill="#ceb888" letter-spacing="2">EST. 1987</text>
+  </g>
+</svg>
