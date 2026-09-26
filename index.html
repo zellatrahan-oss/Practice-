@@ -12,6 +12,138 @@
   <link rel="preload" href="assets/fonts/apercu-pro/woff2/Apercu-Pro-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/apercu-pro/woff2/Apercu-Pro-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .party-banner {
+      background: linear-gradient(135deg, #ff1744 0%, #d50000 50%, #b71c1c 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 8px solid #ffeb3b;
+      border-bottom: 8px solid #ffeb3b;
+      box-shadow: 0 10px 40px rgba(255, 23, 68, 0.3);
+      margin: 60px 0;
+    }
+
+    .party-banner::before {
+      content: '🎉';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.1;
+      left: -20px;
+      top: -20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .party-banner::after {
+      content: '🎉';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.1;
+      right: -20px;
+      bottom: -20px;
+      animation: float 3s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(20px); }
+    }
+
+    .party-banner__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .party-banner h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .party-banner .date-requirement {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 30px 0;
+      color: #ffeb3b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .party-banner .emoji-row {
+      font-size: 4rem;
+      margin: 20px 0;
+      letter-spacing: 30px;
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .party-banner p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .party-banner .cta-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .party-banner .btn {
+      font-size: 1.2rem;
+      padding: 18px 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 3px solid white;
+      transition: all 0.3s ease;
+    }
+
+    .party-banner .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .party-banner .btn--cta {
+      background-color: #ffeb3b;
+      color: #b71c1c;
+      border-color: #ffeb3b;
+    }
+
+    .party-banner .btn--outline-party {
+      background-color: transparent;
+      color: white;
+      border-color: white;
+    }
+
+    .party-banner .btn--outline-party:hover {
+      background-color: white;
+      color: #b71c1c;
+    }
+  </style>
 </head>
 <body>
   <!-- Icon set (inline SVG sprite, referenced with <use href="#i-...">) -->
@@ -155,7 +287,7 @@
       </div>
     </section>
 
-    <section class="section harry-black">
+    <section class="section">
       <div class="container">
         <div class="section__head">
           <div>
@@ -167,44 +299,103 @@
         <div class="harry-black__content">
           <div class="harry-black__game">
             <div class="harry-black__map">
-              <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" class="world-map">
-                <g class="map-region" data-location="North America" onclick="checkLocation('North America')">
-                  <path d="M 100 150 L 250 100 L 280 200 L 150 280 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
-                  <text x="170" y="200" class="map-label">North America</text>
+              <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" class="world-map">
+                <!-- North America -->
+                <g class="map-region" data-location="United States" onclick="checkLocation('United States')">
+                  <path d="M 100 180 L 280 150 L 300 280 L 150 300 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="180" y="230" class="map-label" font-size="14" font-weight="bold">USA</text>
                 </g>
-                <g class="map-region" data-location="Europe" onclick="checkLocation('Europe')">
-                  <path d="M 380 120 L 480 100 L 520 180 L 420 200 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
-                  <text x="430" y="160" class="map-label">Europe</text>
+                
+                <!-- Canada -->
+                <g class="map-region" data-location="Canada" onclick="checkLocation('Canada')">
+                  <path d="M 100 80 L 280 60 L 290 150 L 120 140 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="170" y="110" class="map-label" font-size="12" font-weight="bold">Canada</text>
                 </g>
-                <g class="map-region" data-location="Africa" onclick="checkLocation('Africa')">
-                  <path d="M 480 250 L 560 200 L 600 400 L 500 450 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
-                  <text x="530" y="330" class="map-label">Africa</text>
+                
+                <!-- Mexico -->
+                <g class="map-region" data-location="Mexico" onclick="checkLocation('Mexico')">
+                  <path d="M 150 300 L 250 290 L 260 360 L 160 370 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="190" y="330" class="map-label" font-size="12" font-weight="bold">Mexico</text>
                 </g>
-                <g class="map-region" data-location="Asia" onclick="checkLocation('Asia')">
-                  <path d="M 550 100 L 750 120 L 800 300 L 600 350 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
-                  <text x="650" y="220" class="map-label">Asia</text>
+
+                <!-- Brazil -->
+                <g class="map-region" data-location="Brazil" onclick="checkLocation('Brazil')">
+                  <path d="M 350 320 L 450 300 L 470 500 L 360 520 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="400" y="420" class="map-label" font-size="14" font-weight="bold">Brazil</text>
                 </g>
+
+                <!-- UK -->
+                <g class="map-region" data-location="United Kingdom" onclick="checkLocation('United Kingdom')">
+                  <path d="M 480 120 L 520 110 L 525 180 L 485 185 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="495" y="150" class="map-label" font-size="11" font-weight="bold">UK</text>
+                </g>
+
+                <!-- France -->
+                <g class="map-region" data-location="France" onclick="checkLocation('France')">
+                  <path d="M 520 130 L 560 120 L 570 200 L 530 195 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="540" y="160" class="map-label" font-size="12" font-weight="bold">France</text>
+                </g>
+
+                <!-- Germany -->
+                <g class="map-region" data-location="Germany" onclick="checkLocation('Germany')">
+                  <path d="M 560 100 L 610 95 L 620 170 L 570 175 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="580" y="135" class="map-label" font-size="12" font-weight="bold">Germany</text>
+                </g>
+
+                <!-- Russia -->
+                <g class="map-region" data-location="Russia" onclick="checkLocation('Russia')">
+                  <path d="M 620 80 L 850 70 L 860 250 L 630 260 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="720" y="170" class="map-label" font-size="14" font-weight="bold">Russia</text>
+                </g>
+
+                <!-- China -->
+                <g class="map-region" data-location="China" onclick="checkLocation('China')">
+                  <path d="M 750 200 L 900 180 L 920 350 L 760 360 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="820" y="280" class="map-label" font-size="14" font-weight="bold">China</text>
+                </g>
+
+                <!-- India -->
+                <g class="map-region" data-location="India" onclick="checkLocation('India')">
+                  <path d="M 700 320 L 800 310 L 820 450 L 710 460 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="750" y="390" class="map-label" font-size="12" font-weight="bold">India</text>
+                </g>
+
+                <!-- Japan -->
+                <g class="map-region" data-location="Japan" onclick="checkLocation('Japan')">
+                  <path d="M 920 200 L 970 190 L 980 290 L 930 300 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="940" y="250" class="map-label" font-size="11" font-weight="bold">Japan</text>
+                </g>
+
+                <!-- Australia -->
                 <g class="map-region" data-location="Australia" onclick="checkLocation('Australia')">
-                  <path d="M 750 400 L 820 380 L 840 480 L 760 500 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
-                  <text x="785" y="445" class="map-label">Australia</text>
+                  <path d="M 950 420 L 1050 400 L 1070 550 L 960 560 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="990" y="480" class="map-label" font-size="12" font-weight="bold">Australia</text>
                 </g>
-                <g class="map-region" data-location="South America" onclick="checkLocation('South America')">
-                  <path d="M 200 300 L 300 280 L 320 500 L 220 520 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
-                  <text x="260" y="410" class="map-label">South America</text>
+
+                <!-- Egypt / Africa -->
+                <g class="map-region" data-location="Egypt" onclick="checkLocation('Egypt')">
+                  <path d="M 580 280 L 650 270 L 670 380 L 600 390 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="610" y="335" class="map-label" font-size="11" font-weight="bold">Egypt</text>
+                </g>
+
+                <!-- South Africa -->
+                <g class="map-region" data-location="South Africa" onclick="checkLocation('South Africa')">
+                  <path d="M 600 450 L 700 440 L 710 600 L 610 610 Z" fill="#f0e7ff" stroke="#a25de6" stroke-width="2"/>
+                  <text x="640" y="530" class="map-label" font-size="12" font-weight="bold">South Africa</text>
                 </g>
               </svg>
             </div>
             <div class="harry-black__panel">
               <div class="harry-black__status" id="statusBox">
                 <h3>🕵️ Harry Black is somewhere in the world...</h3>
-                <p>Click on a continent to find him!</p>
+                <p>Click on a country to find him!</p>
               </div>
               <div class="harry-black__clues">
                 <h4>Clues:</h4>
                 <ul id="cluesList">
-                  <li>Harry is currently in a location with over 100 million people</li>
-                  <li>The continent he's on borders at least 2 oceans</li>
-                  <li>He's having lunch at a local business district</li>
+                  <li>Harry is currently in a country that is in Asia</li>
+                  <li>The country has a population over 1 billion people</li>
+                  <li>He's exploring ancient temples and spicy street food</li>
                 </ul>
               </div>
               <button class="btn btn--gold" onclick="resetGame()">Reset Game</button>
@@ -214,24 +405,20 @@
       </div>
     </section>
 
-    <section class="section section--tint">
-      <div class="container">
-        <span class="eyebrow">Save the date</span>
-        <h2 class="h2 feature__title">FSU Fraternity Spring Party: Bring Your Best Date!</h2>
-        <div class="feature__grid">
-          <div class="photo" role="img" aria-label="Photo placeholder: Party photo, 16:10"><div><svg aria-hidden="true"><use href="#i-image"/></svg>Party photo, 16:10</div></div>
-          <div class="feature__body">
-            <p>Join FSU Fraternity FBLA for an exclusive spring party! This is not just any event—you must bring a date to attend. Whether it's a friend, significant other, or classmate, this is your chance to celebrate with the chapter in style.</p>
-            <p class="meta">
-              <span><svg aria-hidden="true"><use href="#i-calendar"/></svg>Saturday, April 12, 2026</span>
-              <span><svg aria-hidden="true"><use href="#i-clock"/></svg>9:00 PM - Midnight</span>
-              <span><svg aria-hidden="true"><use href="#i-pin"/></svg>FSU Student Life Center</span>
-            </p>
-            <div class="party-details">
-              <p><strong>Date Requirement:</strong> All attendees must bring a date. This is a couples' event designed to celebrate our chapter and strengthen the bonds within our community.</p>
-            </div>
-            <a class="btn btn--navy" href="events.html">Event details <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          </div>
+    <!-- DRAMATIC PARTY BANNER -->
+    <section class="party-banner">
+      <div class="party-banner__content">
+        <div class="emoji-row">💃 🎊 🕺</div>
+        <h2>FSU FRATERNITY SPRING PARTY</h2>
+        <div class="date-requirement">⚠️ YOU MUST HAVE A DATE TO ENTER ⚠️</div>
+        <p><strong>No exceptions. No solo entries. Bring your plus-one or stay home.</strong></p>
+        <div class="emoji-row">🎉 💕 🎉</div>
+        <p><strong style="font-size: 1.3rem;">Saturday, April 12, 2026 • 9:00 PM - Midnight</strong></p>
+        <p><strong style="font-size: 1.3rem;">FSU Student Life Center</strong></p>
+        <p style="margin-top: 30px; font-size: 1.2rem;">This is THE event of the semester. You don't want to miss it. But remember—<span style="text-decoration: underline;">you MUST bring a date</span>.</p>
+        <div class="cta-buttons">
+          <a class="btn btn--cta" href="#register">Get Your Ticket</a>
+          <a class="btn btn--outline-party" href="events.html">Full Details</a>
         </div>
       </div>
     </section>
@@ -291,7 +478,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    const harryBlackLocation = "Asia";
+    const harryBlackLocation = "China";
     let attempts = 0;
 
     function checkLocation(location) {
@@ -308,7 +495,7 @@
       } else {
         statusBox.innerHTML = `
           <h3>❌ Not quite...</h3>
-          <p>Harry Black is not in ${location}. Try another continent! (${attempts} attempt${attempts > 1 ? 's' : ''} so far)</p>
+          <p>Harry Black is not in ${location}. Try another country! (${attempts} attempt${attempts > 1 ? 's' : ''} so far)</p>
         `;
         statusBox.classList.remove('found');
       }
@@ -319,7 +506,7 @@
       const statusBox = document.getElementById('statusBox');
       statusBox.innerHTML = `
         <h3>🕵️ Harry Black is somewhere in the world...</h3>
-        <p>Click on a continent to find him!</p>
+        <p>Click on a country to find him!</p>
       `;
       statusBox.classList.remove('found');
       document.querySelectorAll('.map-region').forEach(el => el.style.pointerEvents = 'auto');
